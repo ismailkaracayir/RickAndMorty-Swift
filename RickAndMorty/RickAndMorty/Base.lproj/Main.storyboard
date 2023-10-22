@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FLl-qZ-7EA">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Splash View Controller-->
+        <scene sceneID="ybD-Nk-Cgd">
+            <objects>
+                <viewController id="Wc5-XC-UBb" customClass="SplashViewController" customModule="RickAndMorty" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="k36-2d-aUH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uN0-rO-1t4">
+                                <rect key="frame" x="107.5" y="602" width="199.5" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="904-NS-90F">
+                                        <rect key="frame" x="0.0" y="0.0" width="199.5" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                        <color key="textColor" systemColor="secondarySystemBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="904-NS-90F" firstAttribute="leading" secondItem="uN0-rO-1t4" secondAttribute="leading" id="Gdd-na-gVf"/>
+                                    <constraint firstAttribute="bottom" secondItem="904-NS-90F" secondAttribute="bottom" id="LeO-3B-gva"/>
+                                    <constraint firstAttribute="trailing" secondItem="904-NS-90F" secondAttribute="trailing" id="WJK-G1-eRf"/>
+                                    <constraint firstItem="904-NS-90F" firstAttribute="top" secondItem="uN0-rO-1t4" secondAttribute="top" id="Zvt-E3-TjO"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rick And Morty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vNq-eZ-MRa">
+                                <rect key="frame" x="31" y="192" width="352" height="60"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="50"/>
+                                <color key="textColor" systemColor="secondarySystemBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="5wB-KN-qwQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vNq-eZ-MRa" firstAttribute="top" secondItem="5wB-KN-qwQ" secondAttribute="top" constant="100" id="5Av-Zh-skJ"/>
+                            <constraint firstItem="uN0-rO-1t4" firstAttribute="centerX" secondItem="k36-2d-aUH" secondAttribute="centerX" id="Bn4-dc-A7t"/>
+                            <constraint firstItem="vNq-eZ-MRa" firstAttribute="centerX" secondItem="k36-2d-aUH" secondAttribute="centerX" id="T57-Jm-aqv"/>
+                            <constraint firstItem="5wB-KN-qwQ" firstAttribute="bottom" secondItem="uN0-rO-1t4" secondAttribute="bottom" constant="200" id="fTu-nD-nXa"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="lXs-Xh-bV4"/>
+                    <connections>
+                        <outlet property="bodyLbl" destination="904-NS-90F" id="1sn-k5-SoJ"/>
+                        <outlet property="mainView" destination="k36-2d-aUH" id="Chl-Zl-FK3"/>
+                        <outlet property="titleLbl" destination="vNq-eZ-MRa" id="XrX-T6-cjd"/>
+                        <outlet property="welcomeView" destination="uN0-rO-1t4" id="4ti-u8-DF2"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="toMain" id="BQU-Ca-joh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8po-OO-QOe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="234.78260869565219" y="-5.3571428571428568"/>
+        </scene>
+        <!--Rick And Morty-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainVC" customModule="RickAndMorty" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vwc-ck-sAD">
+                                <rect key="frame" x="0.0" y="102" width="414" height="154"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="LGU-1a-Tgb">
+                                        <rect key="frame" x="0.0" y="50" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LGU-1a-Tgb" id="Po8-QA-rBK">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vwc-ck-sAD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="29K-ZU-5oY"/>
+                            <constraint firstItem="vwc-ck-sAD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="Od3-vI-KCB"/>
+                            <constraint firstItem="vwc-ck-sAD" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.2" id="d26-sb-NGe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vwc-ck-sAD" secondAttribute="trailing" id="vFC-qj-9OR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Rick And Morty" id="t7B-iu-tzs"/>
+                    <connections>
+                        <outlet property="mainView" destination="8bC-Xf-vdC" id="YKV-Qw-5Af"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1152.1739130434783" y="-5.3571428571428568"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="3SY-8Y-3Ee">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FLl-qZ-7EA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jHZ-nf-5Rk">
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="customColor3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
+                            <color key="textColor" name="customColor4"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Wc5-XC-UBb" kind="relationship" relationship="rootViewController" id="IU0-1E-XVT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RdQ-S7-tb8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-675.36231884057975" y="-5.3571428571428568"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="customColor3">
+            <color red="0.94901960784313721" green="0.36078431372549019" blue="0.019607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="customColor4">
+            <color red="0.85098039215686272" green="0.23921568627450981" blue="0.015686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
