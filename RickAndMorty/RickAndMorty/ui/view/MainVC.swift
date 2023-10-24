@@ -11,7 +11,8 @@ class MainVC: UIViewController {
     @IBOutlet var mainView: UIView!
     var viewModel = LocationViewModel()
     var locationList = [Result]()
-    
+    var characterIDs = [Int]()
+
     @IBOutlet weak var locationCollectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -43,9 +44,11 @@ class MainVC: UIViewController {
 
 }
 
-
-extension MainVC : UICollectionViewDelegate,UICollectionViewDataSource,CollectionCell {
+// oluşan buttonlar taşma sorunu oluyor  proje sonunda düzeltilmesi gerekiyor
+extension MainVC : UICollectionViewDelegate,UICollectionViewDataSource {
  
+    
+   
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return locationList.count
@@ -54,34 +57,42 @@ extension MainVC : UICollectionViewDelegate,UICollectionViewDataSource,Collectio
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let locationItem = locationList[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "locationCell", for: indexPath) as! LocationCollectionViewCell
+        print("oluştu")
         cell.isUserInteractionEnabled = true
-        cell.indexpath = indexPath
-        cell.cellProtocol = self
-        cell.locationBtn.layer.borderColor = UIColor.white.cgColor
-        cell.locationBtn.layer.borderWidth = 1.5
-        cell.locationBtn.layer.cornerRadius = 20
-       
-        cell.locationBtn.setTitle(locationItem.name, for: .normal)
-   
-
+        cell.itemLabel.text = locationItem.name
         return cell
     }
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let locationItem = self.locationList[indexPath.row]
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "locationCell", for: indexPath) as! LocationCollectionViewCell
-   
-        print(locationItem.name!)
-
-
-    }
-
-    func btnClick(indexPath: IndexPath) {
-        print("Btn tıklandı")
-        print(indexPath.row)
-    
+        let selectedCell:UICollectionViewCell = locationCollectionView.cellForItem(at: indexPath)!
+        selectedCell.contentView.backgroundColor = UIColor(named: "customColor2")
+        let selectedItem = locationList[indexPath.row]
+        if let list = selectedItem.residents {
+            for url in list {
+                if let lastPathComponent = URL(string: url)?.lastPathComponent {
+                     if let characterID = Int(lastPathComponent) {
+                         characterIDs.append(characterID)
+                        
+                     }
+                 }
+            }
+        }
+        
+      
         
     }
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        let selectedCell:UICollectionViewCell = locationCollectionView.cellForItem(at: indexPath)!
+        selectedCell.contentView.backgroundColor = .clear
+
+    }
+ 
+ 
+    
+
+    
+
+
+ 
     
     
 }

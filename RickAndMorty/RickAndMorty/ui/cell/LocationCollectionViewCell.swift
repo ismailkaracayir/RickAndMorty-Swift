@@ -6,19 +6,21 @@
 //
 
 import UIKit
-protocol CollectionCell{
-    func btnClick (indexPath : IndexPath)
-}
+
 class LocationCollectionViewCell: UICollectionViewCell {
+   
+    @IBOutlet  var itemContendView: UIView!
+    @IBOutlet weak var itemLabel: UILabel!
     
-    @IBOutlet weak var locationBtn: UIButton!
-    var indexpath : IndexPath?
-    var cellProtocol : CollectionCell?
-    
-    @IBAction func locationBtnClick(_ sender: Any) {
-        cellProtocol?.btnClick(indexPath: indexpath!)
-        print("btn click oldu")
+    override func layoutSubviews() {
+        itemContendView.layer.borderWidth = 2
+        itemContendView.layer.borderColor = UIColor.white.cgColor
+        itemContendView.layer.cornerRadius = 20
+       
     }
     
  
+  
 }
+
+
