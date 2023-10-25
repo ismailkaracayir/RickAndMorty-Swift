@@ -37,19 +37,24 @@ struct Result: Codable {
     }
 }
 
-struct Character {
+struct Character: Codable {
     let id: Int?
-    let name, status, species, type: String?
-    let gender: String?
-    let origin, location: Location?
+    let name, status, species, type, gender: String?
+    let origin : Origin?
+    let location: Location?
     let image: String?
     let episode: [String]?
     let url: String?
     let created: String?
-}
+    }
+
 
 // MARK: - Location
-struct Location {
+struct Location :Codable{
+    let name: String?
+    let url: String?
+}
+struct Origin: Codable {
     let name: String?
     let url: String?
 }

@@ -24,6 +24,7 @@
 		A291D7D02AE59410003C6072 /* LocationRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A291D7CF2AE59410003C6072 /* LocationRepo.swift */; };
 		A291D7D22AE59492003C6072 /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A291D7D12AE59492003C6072 /* LocationViewModel.swift */; };
 		A291D7D42AE65EF1003C6072 /* LocationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A291D7D32AE65EF1003C6072 /* LocationCollectionViewCell.swift */; };
+		A291D7D62AE96664003C6072 /* CharacterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A291D7D52AE96664003C6072 /* CharacterCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		A291D7CF2AE59410003C6072 /* LocationRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRepo.swift; sourceTree = "<group>"; };
 		A291D7D12AE59492003C6072 /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
 		A291D7D32AE65EF1003C6072 /* LocationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCollectionViewCell.swift; sourceTree = "<group>"; };
+		A291D7D52AE96664003C6072 /* CharacterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				A291D7D32AE65EF1003C6072 /* LocationCollectionViewCell.swift */,
+				A291D7D52AE96664003C6072 /* CharacterCollectionViewCell.swift */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A291D7D62AE96664003C6072 /* CharacterCollectionViewCell.swift in Sources */,
 				A291D7CE2AE5923E003C6072 /* WebService.swift in Sources */,
 				A291D7B92AE52858003C6072 /* rick&mortyModel.swift in Sources */,
 				A291D7D42AE65EF1003C6072 /* LocationCollectionViewCell.swift in Sources */,

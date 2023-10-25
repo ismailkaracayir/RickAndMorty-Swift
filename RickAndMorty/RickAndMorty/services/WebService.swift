@@ -13,39 +13,38 @@ class WebService{
     
     var locationList = BehaviorSubject<[Result]>(value:[Result]())
     var characterList = BehaviorSubject<[Character]>(value:[Character]())
-    var characterIDs = [String]()
 
     
     init() {
         allLocation()
-        locationCharacterList(idList: [1,2,3,4,5,6,7])
     }
     func locationCharacterList (idList : [Int]){
-        var url = "https://rickandmortyapi.com/api/character/"
-        print("locationCharacterList servis çalıştı")
+        print("locationCharacterList ")
+        var idString = "https://rickandmortyapi.com/api/character/"
         for item in idList {
-         url = url + String(item) + ","
+            idString = idString + String(item) + ","
         }
-        
-     // url son karakteri silinmesi gerekiyor 
-        AF.request(url,method: .post ).response {
+        AF.request(idString,method:.get).response {
             response in
+            if let error = response.error {
+                print(" request error : \(error)")
+            }
+         
             if let data = response.data {
-                print("1")
-
-                do{
-                    let response = try JSONDecoder().decode(Welcome2.self, from: data)
-                    if let list = response.results {
-                        self.locationList.onNext(list)
-                    }
-                }catch{
-                    print("hata oluştu")
-                    print(error.localizedDescription)
+                do {
+                    print("1")
+                    let response = try JSONDecoder().decode([Character].self, from: data)
+                    self.characterList.onNext(response)
+                  
+                } catch let error {
+                  print(error)
                 }
+
                 
             }
         }
     }
+
     
     func allLocation(){
         print("web servis çalıştı")
